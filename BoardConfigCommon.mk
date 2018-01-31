@@ -17,6 +17,8 @@
 # inherit from qcom-common
 -include device/samsung/qcom-common/BoardConfigCommon.mk
 
+COMMON_PATH := device/samsung/apq8084-common
+
 # Architecture
 TARGET_CPU_VARIANT := krait
 
@@ -53,7 +55,7 @@ HAVE_ADRENO_SOURCE := false
 USE_OPENGL_RENDERER := true
 
 # Include path
-TARGET_SPECIFIC_HEADER_PATH := device/samsung/apq8084-common/include
+TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_apq8084
@@ -73,6 +75,9 @@ TARGET_BOARD_PLATFORM := apq8084
 
 # Power HAL
 TARGET_POWERHAL_VARIANT := qcom
+
+# Properties
+TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 
 # Qualcomm support
 TARGET_USES_QCOM_BSP := true
