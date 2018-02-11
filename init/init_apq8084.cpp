@@ -1,5 +1,6 @@
 /*
-   Copyright (c) 2016, The CyanogenMod Project
+   Copyright (c) 2016, The CyanogenMod Project. All rights reserved.
+   Copyright (c) 2017-2018, The LineageOS Project. All rights reserved.
 
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
@@ -34,15 +35,17 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 
+#include <android-base/logging.h>
+
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
 #include "vendor_init.h"
 #include "property_service.h"
-#include "log.h"
-#include "util.h"
 
 #include "init_apq8084.h"
+
+using android::init::property_set;
 
 __attribute__ ((weak))
 void init_target_properties()
@@ -69,7 +72,7 @@ static int read_file2(const char *fname, char *data, int max_size)
 
     fd = open(fname, O_RDONLY);
     if (fd < 0) {
-        ERROR("failed to open '%s'\n", fname);
+        LOG(ERROR) << "failed to open " << fname << std::endl;
         return 0;
     }
 
