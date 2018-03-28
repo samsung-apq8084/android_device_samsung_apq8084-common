@@ -22,7 +22,8 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
-    fingerprint.apq8084
+    fingerprint.apq8084 \
+    ValidityService
 
 # GPS
 PRODUCT_COPY_FILES += \
