@@ -22,7 +22,8 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
-    fingerprint.apq8084
+    fingerprint.apq8084 \
+    ValidityService
 
 # GPS
 PRODUCT_COPY_FILES += \
@@ -63,6 +64,10 @@ PRODUCT_PACKAGES += \
 # RMNET
 PRODUCT_PACKAGES += \
     librmnetctl
+
+# Rootdir
+PRODUCT_PACKAGES += \
+    init.common.rc
 
 # Seccomp
 PRODUCT_COPY_FILES += \

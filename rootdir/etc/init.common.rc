@@ -1,0 +1,6 @@
+on boot
+
+service vcsFPService /system/vendor/bin/vcsFPService
+    class late_start
+    user system
+    group system
